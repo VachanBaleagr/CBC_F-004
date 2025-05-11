@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fitness Details | AI Fitness Trainer</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      background: #f0f8ff;
+      color: #333;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 20px;
+    }
+
+    .details-container {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h1, h2 {
+      color: #0072ff;
+      margin-bottom: 20px;
+    }
+
+    .button-group {
+      margin: 20px 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .fit-btn {
+      padding: 10px 20px;
+      background-color: #0072ff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .fit-btn:hover {
+      background-color: #005fcc;
+    }
+
+    .info-box {
+      background: #e8f4ff;
+      padding: 15px;
+      margin-top: 15px;
+      border-radius: 8px;
+      display: none;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #0072ff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="details-container">
+    <h1>Fitness and AI Integration</h1>
+    <p>Explore the different types of fitness routines and how AI can help optimize each one.</p>
+
+    <h2>Select a Fitness Type:</h2>
+    <div class="button-group">
+      <button class="fit-btn" onclick="showInfo('cardio')">Cardio</button>
+      <button class="fit-btn" onclick="showInfo('strength')">Strength</button>
+      <button class="fit-btn" onclick="showInfo('flexibility')">Flexibility</button>
+      <button class="fit-btn" onclick="showInfo('balance')">Balance</button>
+      <button class="fit-btn" onclick="showInfo('hiit')">HIIT</button>
+    </div>
+
+    <div id="cardio" class="info-box">
+      <strong>Cardio:</strong> Improves heart health, stamina, and helps burn calories. Examples: running, cycling, swimming.
+    </div>
+
+    <div id="strength" class="info-box">
+      <strong>Strength Training:</strong> Builds muscle and increases metabolism. Examples: weight lifting, bodyweight exercises.
+    </div>
+
+    <div id="flexibility" class="info-box">
+      <strong>Flexibility:</strong> Enhances joint range of motion and reduces injury risk. Examples: yoga, dynamic stretching.
+    </div>
+
+    <div id="balance" class="info-box">
+      <strong>Balance:</strong> Improves coordination and posture. Examples: pilates, stability ball exercises.
+    </div>
+
+    <div id="hiit" class="info-box">
+      <strong>HIIT:</strong> High-Intensity Interval Training alternates short bursts of intense activity with rest. Great for fat burning and endurance.
+    </div>
+
+    <a class="back-link" href="home.html">← Back to Home</a>
+  </div>
+
+  <script>
+    function showInfo(id) {
+      const boxes = document.querySelectorAll('.info-box');
+      boxes.forEach(box => box.style.display = 'none');
+
+      const selectedBox = document.getElementById(id);
+      if (selectedBox) {
+        selectedBox.style.display = 'block';
+      }
+    }
+  </script>
+</body>
+</html>
